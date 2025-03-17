@@ -15,7 +15,7 @@
         <!--  Sonar-Scanner -->
         <sonar.projectKey>Maven_Project</sonar.projectKey>
         <sonar.host.url>http://localhost:9000</sonar.host.url>
-        <sonar.login>TOKEN</sonar.login>
+        <sonar.login>squ_5ed393faa213154d389b83823090d031856a69f3</sonar.login>
     </properties>
 
     <dependencies>

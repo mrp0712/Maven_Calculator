@@ -16,6 +16,10 @@
         <sonar.projectKey>Maven_Project</sonar.projectKey>
         <sonar.host.url>http://localhost:9000</sonar.host.url>
         <sonar.login>squ_5ed393faa213154d389b83823090d031856a69f3</sonar.login>
+
+
+        <maven.build.timestamp.format>HH-mm-dd-MM-yyyy</maven.build.timestamp.format>
+        
     </properties>
 
     <dependencies>
@@ -97,7 +101,48 @@
                     </execution>
                 </executions>
             </plugin>
+                            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+                 <configuration>
+                    <repositoryId>nexus-repo</repositoryId>
+                    <url>http://localhost:8081/repository/maven-snapshot/com/farnamhs/converter/Unit-Converter/</url>
+                </configuration>
+            </plugin>
             </plugins>
         </pluginManagement>
     </build>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>snapshot nexus</name>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
+        </snapshotRepository>
+
+        <repository>
+            <id>nexus</id>
+            <name>release nexus</name>
+            <url>http://localhost:8081/repository/maven-proxy/</url>
+        </repository>
+    </distributionManagement>
+
+        <repositories>
+        <repository>
+            <id>nexus</id>
+            <url>http://localhost:8081/repository/maven-proxy/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>nexus-repo</id>
+            <name>Nexus Repository</name>
+            <url>http://localhost:8081/repository/maven-snapshot/com/farnamhs/converter/Unit-Converter/</url>
+        </repository>
+    </repositories>
 </project>

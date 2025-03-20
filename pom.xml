@@ -12,12 +12,6 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
 
-        <!--  Sonar-Scanner -->
-        <sonar.projectKey>Maven_Project</sonar.projectKey>
-        <sonar.host.url>http://localhost:9000</sonar.host.url>
-        <sonar.login>squ_4998d78dbfe6c56b997468f71c3a3f6859872962</sonar.login>
-
-
         <maven.build.timestamp.format>HH-mm-dd-MM-yyyy</maven.build.timestamp.format>
         
     </properties>
